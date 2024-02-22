@@ -8,9 +8,8 @@ import shapes.Triangle;
 
 public class Test16_Triangle {
 	@Test
-	public void t1() {
+	public void triangleArea() {
 		Triangle t=new Triangle(1,2,3,4);
 		org.junit.Assert.assertEquals(3*4/2.0, t.getArea(),0.0);
-		
 	}
 }

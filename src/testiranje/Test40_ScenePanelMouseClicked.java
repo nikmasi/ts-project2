@@ -28,7 +28,7 @@ public class Test40_ScenePanelMouseClicked {
         ScenePanel sp2=mp.getScenePanel();
         
         Field field;
-		try {
+		try { 
 			field = ScenePanel.class.getDeclaredField("shapes");
 			field.setAccessible(true);
 		    field.set(sp2, a);

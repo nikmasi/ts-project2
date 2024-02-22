@@ -26,7 +26,7 @@ import shapes.Triangle;
 public class Test30_dCircle {
 
 	@Test
-	public void test30(){
+	public void circleGetArea(){
 		Triangle t=mock(Triangle.class);
 		when(t.getArea()).thenReturn((double) 0);
 		double b=t.getArea();

@@ -1,11 +1,14 @@
 package testiranje;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertAll;
+
 
 import java.awt.Color;
 
+
 import org.junit.Test;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
@@ -14,10 +17,26 @@ import main.MyShape;
 
 
 public class Test1_MyShapeParam {
+	/*
+	private MyShape ms;
+	
+	@BeforeEach
+	public void before() {
+		System.out.println("before");
+		ms=new MyShape(1,2,3,4);
+	}
+	
+	@AfterEach
+	public void after() {
+		ms=null;
+	}
+	*/
 	@ParameterizedTest
 	@CsvFileSource(resources="/paramTest1.csv",numLinesToSkip=0)
 	public void t1(int a,int b,int c,int d,boolean vr) {
 		MyShape ms=new MyShape(1,2,3,4);
+		//System.out.println(vr);
+		//System.out.println(ms);
 
 		assertEquals(vr,ms.intersects(a,b,c,d));
 	}
@@ -25,7 +44,9 @@ public class Test1_MyShapeParam {
 	@Test
 	public void setGetX() {
 		MyShape ms=new MyShape(1,2,3,4);
+		
 		ms.setX(2);
+		System.out.println("Actual X: " + ms.getX());
 		org.junit.Assert.assertEquals(2, (double)ms.getX(),0.0);
 	}
 	
