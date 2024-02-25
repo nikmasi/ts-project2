@@ -27,6 +27,5 @@ public class Test31_drawCircle {
 		c.draw(gMock);
 		verify(gMock).drawOval(2, 3, 4, 6);
 
-		
 	}
 }
