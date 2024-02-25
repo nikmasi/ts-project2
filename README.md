@@ -1,2 +1,5 @@
 # ts-project2
-Mockito and JUnit
+
+Homework Assignment 2 from the Software Testing Course
+
+(Mockito and JUnit)
