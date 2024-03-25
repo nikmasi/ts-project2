@@ -36,14 +36,18 @@ public class Test_triangleCreate {
 		}
 	}
 	
+	@Test
+	public void triangleArea() {
+		Triangle t=new Triangle(1,2,3,4);
+		org.junit.Assert.assertEquals(3*4/2.0, t.getArea(),0.0);
+	}
+	
 	@ParameterizedTest
 	@CsvFileSource(resources="/paramCreateZeros.csv",numLinesToSkip=0)
 	public void triangleZero(double x,double y) {
 	
 		assertThrows(IllegalArgumentException.class, () -> {
-	        // Your method invocation that should throw IllegalArgumentException
 			new Triangle(1,0,x,y);
-			System.out.println("Trougao sa visinom ili sirinom 0");
 	    });
 	}
 }

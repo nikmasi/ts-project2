@@ -1,6 +1,7 @@
 package testiranje;
 
 import static org.junit.Assert.fail;
+import static org.mockito.Mockito.mock;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -16,7 +17,9 @@ import javax.swing.ImageIcon;
 import org.junit.Test;
 
 import main.MainPanel;
+import main.MyShape;
 import main.Window;
+import panels.ScenePanel;
 
 class Im extends Image{
 
@@ -65,6 +68,7 @@ public class Test25_MainPanel {
 		      
 		      
 		      //m.dragImage=i;
+		      
 		      m.getFeaturesPanel();
 		      m.getScenePanel();
 		      m.getShapePanel();
@@ -72,7 +76,11 @@ public class Test25_MainPanel {
 		      m.mouseEntered(null);
 		      BufferedImage bi = new BufferedImage(2,3, BufferedImage.TYPE_INT_ARGB);
 			  Graphics2D g2 = bi.createGraphics();
+			  Graphics g=bi.createGraphics();
+			  m.paint(g);
 			  m.paint(g2);
+			  
+			 
 			  //new Window();
 			 
 		    } catch (Exception e) {

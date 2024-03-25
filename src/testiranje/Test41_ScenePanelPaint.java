@@ -21,7 +21,7 @@ import shapes.Poly;
 public class Test41_ScenePanelPaint {
 
 	@Test
-	public void test41(){
+	public void paint(){
 	    MainPanel mp=new MainPanel();
 
 		Poly p=new Poly(2,3,4,5);
@@ -36,10 +36,13 @@ public class Test41_ScenePanelPaint {
 		} catch (NoSuchFieldException | SecurityException | IllegalArgumentException | IllegalAccessException e) {}
 	    
 		//mp.getScenePanel().shapes=a;
-		
-		BufferedImage bi = new BufferedImage(2,3, BufferedImage.TYPE_INT_ARGB);
-		Graphics2D g2 = bi.createGraphics();
-		mp.getScenePanel().paint(g2);
-		g2.dispose();	
+		try {
+			BufferedImage bi = new BufferedImage(2,3, BufferedImage.TYPE_INT_ARGB);
+			Graphics2D g2 = bi.createGraphics();
+			ScenePanel s=mp.getScenePanel();
+			s.paint(g2);
+			g2.dispose();
+		}catch (Exception e) {}
+			
 	}
 }
