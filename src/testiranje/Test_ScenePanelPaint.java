@@ -24,16 +24,16 @@ public class Test_ScenePanelPaint {
 	public void paint(){
 	    MainPanel mp=new MainPanel();
 
-		Poly p=new Poly(2,3,4,5);
+	    Poly p=new Poly(2,3,4,5);
 	    ArrayList<MyShape> a=new ArrayList<>();
 	    a.add(p);
 
 	    Field field;
 	    try {
-			field = ScenePanel.class.getDeclaredField("shapes");
-			field.setAccessible(true);
+		    field = ScenePanel.class.getDeclaredField("shapes");
+		    field.setAccessible(true);
 		    field.set(mp.getScenePanel(), a);
-		} catch (NoSuchFieldException | SecurityException | IllegalArgumentException | IllegalAccessException e) {}
+	     } catch (NoSuchFieldException | SecurityException | IllegalArgumentException | IllegalAccessException e) {}
 	    
 		//mp.getScenePanel().shapes=a;
 		try {
