@@ -59,8 +59,8 @@ public class Test_MainPanel {
 	@Test
 	public void t25() {
 		try {
-			  Im i=new Im();i.getWidth(null);
-			  i.getHeight(null);i.getSource();i.getGraphics();i.getProperty(null, null);
+		      Im i=new Im();i.getWidth(null);
+		      i.getHeight(null);i.getSource();i.getGraphics();i.getProperty(null, null);
 		      MainPanel m=new MainPanel();
 		      Field field = MainPanel.class.getDeclaredField("dragImage");
 		      field.setAccessible(true);
@@ -75,17 +75,17 @@ public class Test_MainPanel {
 		      m.mouseMoved(null);
 		      m.mouseEntered(null);
 		      BufferedImage bi = new BufferedImage(2,3, BufferedImage.TYPE_INT_ARGB);
-			  Graphics2D g2 = bi.createGraphics();
-			  Graphics g=bi.createGraphics();
-			  m.paint(g);
-			  m.paint(g2);
+		      Graphics2D g2 = bi.createGraphics();
+		      Graphics g=bi.createGraphics();
+		      m.paint(g);
+		      m.paint(g2);
 			  
 			 
 			  //new Window();
 			 
 		    } catch (Exception e) {
 		      fail(e.getMessage());
-		    }
+		}
 	}
 	
 }
